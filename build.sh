@@ -66,7 +66,7 @@ fi
 echo "= striptease"
 strip -s -R .comment -R .gnu.version --strip-unneeded build/findutils-${find_version}/find
 echo "= compressing"
-upx --ultra-brute build/findutils-${find_version}/find/find
+upx --ultra-brute build/findutils-${find_version}/find/*
 echo "= extracting find binary"
-cp build/findutils-${find_version}/find/find releases
+cp build/findutils-${find_version}/find/* releases
 echo "= done"
