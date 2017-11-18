@@ -64,9 +64,12 @@ if [ ! -d releases ]; then
 fi
 
 echo "= striptease"
-strip -s -R .comment -R .gnu.version --strip-unneeded build/findutils-${find_version}/find
+strip -s -R .comment -R .gnu.version --strip-unneeded build/findutils-${find_version}/find/find
+strip -s -R .comment -R .gnu.version --strip-unneeded build/findutils-${find_version}/xargs/xargs
 echo "= compressing"
-upx --ultra-brute build/findutils-${find_version}/find/*
+upx --ultra-brute build/findutils-${find_version}/find/find
+upx --ultra-brute build/findutils-${find_version}/xargs/xargs
 echo "= extracting find binary"
-cp build/findutils-${find_version}/find/* releases
+cp build/findutils-${find_version}/find/find releases
+cp build/findutils-${find_version}/xargs/xargs releases
 echo "= done"
